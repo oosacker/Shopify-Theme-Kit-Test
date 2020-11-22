@@ -1,0 +1,17 @@
+{
+  "current": {
+    "link_color": "#e32c2b",
+    "sections": {
+      "random-collection": {
+        "type": "random-collection",
+        "settings": {
+          "show_soldout": true
+        }
+      }
+    },
+    "content_for_index": []
+  },
+  "presets": {
+    "Default": {}
+  }
+}

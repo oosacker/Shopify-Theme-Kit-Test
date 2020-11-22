@@ -1,0 +1,29 @@
+{% assign collection = collections['all'] %}
+
+
+<ul>
+  {% for product in collection.products %}
+      {% unless section.settings.hide_soldout != false and product.available != true %}
+  
+      <li>
+        <a style="color:{{ settings.link_color }}" href={{ product.url }}> 
+          {{ product.title }}</a>: {{ product.price | money }} {% unless product.available %} SOLD OUT {% endunless %}
+      </li>
+  
+      {% endunless %}
+  {% endfor %}
+</ul>
+
+{% schema %}
+	{
+		"name": "My Section",
+		"settings": [
+			{
+				"type": "checkbox",
+				"id": "hide_soldout",
+				"label": "Hide sold out?",
+				"default": false
+			}
+		]
+	}
+{% endschema %}
